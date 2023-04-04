@@ -48,9 +48,9 @@ propertyController.get("/find", async (req, res) => {
 // get counts of types -> ex: {beach: 2, village: 5, mountain: 12}
 propertyController.get("/find/types", async (req, res) => {
   try {
-    const beachType = await Property.countDocuments({ type: beach });
-    const mountainType = await Property.countDocuments({ type: mountain });
-    const villageType = await Property.countDocuments({ type: village });
+    const beachType = await Property.countDocuments({ type: "beach" });
+    const mountainType = await Property.countDocuments({ type: "mountain" });
+    const villageType = await Property.countDocuments({ type: "village" });
 
     return res.status(200).json({
       beach: beachType,
